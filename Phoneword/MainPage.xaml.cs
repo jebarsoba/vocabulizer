@@ -5,38 +5,31 @@ namespace Phoneword
 {
     public partial class MainPage : ContentPage
     {
-        string translatedNumber;
-
         public MainPage()
         {
             InitializeComponent();
         }
 
-        void OnTranslate(object sender, EventArgs e)
+        async void OnAddToMyList(object sender, EventArgs e)
         {
-            translatedNumber = Core.PhonewordTranslator.ToNumber(phoneNumberText.Text);
-            if (!string.IsNullOrWhiteSpace(translatedNumber))
-            {
-                callButton.IsEnabled = true;
-                callButton.Text = "Call " + translatedNumber;
-            }
-            else {
-                callButton.IsEnabled = false;
-                callButton.Text = "Call";
-            }
-        }
+            string sourceWord = sourceWordText.Text.Trim();
+            string targetWord = targetWordText.Text.Trim();
 
-        async void OnCall(object sender, EventArgs e)
-        {
+            string alertTitle = "Add Confirmation";
+            string alertBodyText = sourceWord + "/" + targetWord;
+
+            if (string.IsNullOrEmpty(sourceWord) || string.IsNullOrEmpty(targetWord))
+            {
+                alertTitle = "An error has occurred";
+                alertBodyText = "You have to add both words.";
+            }
+
             if (await this.DisplayAlert(
-                "Dial a Number",
-                "Would you like to call " + translatedNumber + "?",
+                alertTitle, alertBodyText
+               ,
                 "Yes",
                 "No"))
             {
-                var dialer = DependencyService.Get<IDialer>();
-                if (dialer != null)
-                    dialer.Dial(translatedNumber);
             }
         }
     }
