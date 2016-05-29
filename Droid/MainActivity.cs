@@ -2,9 +2,9 @@
 using Android.Content.PM;
 using Android.OS;
 
-namespace Phoneword.Droid
+namespace Vocabulizer.Droid
 {
-    [Activity(Label = "Phoneword.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Vocabulizer.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
@@ -17,4 +17,3 @@ namespace Phoneword.Droid
         }
     }
 }
-

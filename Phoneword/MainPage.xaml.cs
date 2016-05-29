@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 
-namespace Phoneword
+namespace Vocabulizer
 {
     public partial class MainPage : ContentPage
     {
@@ -21,16 +21,10 @@ namespace Phoneword
             if (string.IsNullOrEmpty(sourceWord) || string.IsNullOrEmpty(targetWord))
             {
                 alertTitle = "An error has occurred";
-                alertBodyText = "You have to add both words.";
+                alertBodyText = "You have to enter both words.";
             }
 
-            if (await this.DisplayAlert(
-                alertTitle, alertBodyText
-               ,
-                "Yes",
-                "No"))
-            {
-            }
+            await this.DisplayAlert(alertTitle, alertBodyText, "Ok");
         }
     }
 }

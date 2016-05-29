@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoneword", "Phoneword\Phoneword.csproj", "{F7AA3E5E-427D-440C-A963-C35B3392D440}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocabulizer", "Phoneword\Vocabulizer.csproj", "{F7AA3E5E-427D-440C-A963-C35B3392D440}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Phoneword.Droid", "Droid\Phoneword.Droid.csproj", "{3A52F888-2D34-4011-A4D6-A6132E3C6CC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocabulizer.Droid", "Droid\Vocabulizer.Droid.csproj", "{3A52F888-2D34-4011-A4D6-A6132E3C6CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
