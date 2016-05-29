@@ -98,7 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Phoneword\Vocabulizer.csproj">
+    <ProjectReference Include="..\Vocabulizer\Vocabulizer.csproj">
       <Project>{F7AA3E5E-427D-440C-A963-C35B3392D440}</Project>
       <Name>Vocabulizer</Name>
     </ProjectReference>
