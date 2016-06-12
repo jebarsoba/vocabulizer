@@ -1,30 +1,36 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace Vocabulizer
 {
     public partial class MainPage : ContentPage
     {
+        ObservableCollection<string> words = new ObservableCollection<string>();
+
         public MainPage()
         {
             InitializeComponent();
+
+            this.wordList.ItemsSource = this.words;
         }
 
         async void OnAddToMyList(object sender, EventArgs e)
         {
-            string sourceWord = sourceWordText.Text.Trim();
-            string targetWord = targetWordText.Text.Trim();
-
-            string alertTitle = "Add Confirmation";
-            string alertBodyText = sourceWord + "/" + targetWord;
-
-            if (string.IsNullOrEmpty(sourceWord) || string.IsNullOrEmpty(targetWord))
+            if (string.IsNullOrEmpty(sourceWordText.Text) || string.IsNullOrEmpty(targetWordText.Text))
             {
-                alertTitle = "An error has occurred";
-                alertBodyText = "You have to enter both words.";
+                string alertTitle = "An error has occurred";
+                string alertBodyText = "You have to enter both words.";
+
+                await this.DisplayAlert(alertTitle, alertBodyText, "Ok");
+
+                return;
             }
 
-            await this.DisplayAlert(alertTitle, alertBodyText, "Ok");
+            this.words.Add(sourceWordText.Text + "/" + targetWordText.Text);
+
+            sourceWordText.Text = string.Empty;
+            targetWordText.Text = string.Empty;
         }
     }
 }

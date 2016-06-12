@@ -16,6 +16,7 @@
       <Entry x:Name="sourceWordText" Placeholder="Enter the source word" />
       <Entry x:Name="targetWordText" Placeholder="Enter the target word" />
       <Button x:Name="addToMyListButon" Text="Add to my list" Clicked="OnAddToMyList" />
+      <ListView x:Name="wordList" />
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
