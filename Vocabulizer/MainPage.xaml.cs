@@ -29,6 +29,7 @@ namespace Vocabulizer
             }
 
             this.words.Add(sourceWordText.Text + "/" + targetWordText.Text);
+            WordRepository.Add(sourceWordText.Text + "/" + targetWordText.Text);
 
             sourceWordText.Text = string.Empty;
             targetWordText.Text = string.Empty;

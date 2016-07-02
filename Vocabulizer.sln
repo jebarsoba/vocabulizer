@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocabulizer", "Vocabulizer\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vocabulizer.Droid", "Droid\Vocabulizer.Droid.csproj", "{3A52F888-2D34-4011-A4D6-A6132E3C6CC6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VocabulizerTest", "VocabulizerTest\VocabulizerTest.csproj", "{1114F8C5-63AC-47BE-9537-810CB88BD3D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,10 @@ Global
 		{3A52F888-2D34-4011-A4D6-A6132E3C6CC6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{3A52F888-2D34-4011-A4D6-A6132E3C6CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A52F888-2D34-4011-A4D6-A6132E3C6CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1114F8C5-63AC-47BE-9537-810CB88BD3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1114F8C5-63AC-47BE-9537-810CB88BD3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1114F8C5-63AC-47BE-9537-810CB88BD3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1114F8C5-63AC-47BE-9537-810CB88BD3D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
