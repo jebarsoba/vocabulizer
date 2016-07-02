@@ -1,7 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Vocabulizer.MainPage">
+             x:Class="Vocabulizer.PracticePage">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
   <ContentPage.Padding>
     <OnPlatform x:TypeArguments="Thickness"
                 iOS="20, 40, 20, 20"
@@ -13,10 +14,9 @@
                  HorizontalOptions="FillAndExpand"
                  Orientation="Vertical"
                  Spacing="15">
-      <Entry x:Name="sourceWordText" Placeholder="Enter the source word" />
+      <Label x:Name="sourceWordText" Text="Hello" />
       <Entry x:Name="targetWordText" Placeholder="Enter the target word" />
-      <Button x:Name="addToMyListButon" Text="Add to my list" Clicked="OnAddToMyList" />
-      <Button x:Name="practiceButon" Text="Practice" Clicked="GoPractice" />
+      <Button x:Name="practiceButon" Text="Practice" Clicked="practice" />
       <ListView x:Name="wordList" />
     </StackLayout>
   </ContentPage.Content>

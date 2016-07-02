@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
+
 namespace Vocabulizer
 {
     public partial class MainPage : ContentPage
@@ -31,6 +32,9 @@ namespace Vocabulizer
 
             sourceWordText.Text = string.Empty;
             targetWordText.Text = string.Empty;
+        }
+        void GoPratcice(object sender, EventArgs e) {
+           // App.Navigation.PushAsync(new PracticePage());
         }
     }
 }
