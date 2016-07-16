@@ -4,16 +4,27 @@ namespace Vocabulizer
 {
     public static class WordRepository
     {
-        private static List<string> words = new List<string>();
+        private static List<string> stringWords = new List<string>();
+        private static List<Word> pocoWords = new List<Word>();
 
         public static void Add(string word)
         {
-            words.Add(word);
+            stringWords.Add(word);
+        }
+
+        public static void Add(Word word)
+        {
+            pocoWords.Add(word);
         }
 
         public static IList<string> GetAll()
         {
-            return words;
+            return stringWords;
+        }
+
+        public static IList<Word> GetAllPocoWords()
+        {
+            return pocoWords;
         }
     }
 }
