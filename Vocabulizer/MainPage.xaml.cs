@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
@@ -7,6 +8,7 @@ namespace Vocabulizer
     public partial class MainPage : ContentPage
     {
         ObservableCollection<string> words = new ObservableCollection<string>();
+        WordRepository repo = new WordRepository();
 
         public MainPage()
         {
@@ -28,7 +30,14 @@ namespace Vocabulizer
             }
 
             this.words.Add(sourceWordText.Text + "/" + targetWordText.Text);
-            WordRepository.Add(sourceWordText.Text + "/" + targetWordText.Text);
+
+            this.repo.Add(
+                new Word()
+                {
+                    source = sourceWordText.Text,
+                    target = targetWordText.Text
+                }
+            );
 
             sourceWordText.Text = string.Empty;
             targetWordText.Text = string.Empty;
