@@ -1,5 +1,6 @@
 ﻿using DAL;
 using System;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Vocabulizer
@@ -7,24 +8,26 @@ namespace Vocabulizer
     public partial class PracticePage : ContentPage
     {
         WordRepository repo = new WordRepository();
+        string sourceWordToPlay = null;
+        string targetWordToPlay = null;
 
         public PracticePage()
         {
             InitializeComponent();
-            Title = "asas";
+
+            Word word = this.repo.GetAll().FirstOrDefault();
+            this.sourceWordToPlay = word.source;
+            this.targetWordToPlay = word.target;
+
+            sourceWordText.Text = this.sourceWordToPlay;
         }
 
-        async void practice(object sender, EventArgs e)
+        async void OnPractice(object sender, EventArgs e)
         {
             string alertTitle = string.Empty;
             string alertBodyText = string.Empty;
 
-            string sourceWordToPlay = "1234";
-            string targetWordToPlay = "5678";
-
-            string userEnterWord = targetWordText.Text.Trim();
-
-            if (string.IsNullOrEmpty(userEnterWord) || string.IsNullOrEmpty(targetWordToPlay))
+            if (string.IsNullOrEmpty(targetWordText.Text) || string.IsNullOrEmpty(this.targetWordToPlay))
             {
                 alertTitle = "An error has occurred";
                 alertBodyText = "You have to enter both words.";
@@ -34,10 +37,12 @@ namespace Vocabulizer
                 return;
             }
 
-            if (userEnterWord.ToLower() != targetWordToPlay.ToLower())
+            string userEnterWord = targetWordText.Text.Trim();
+
+            if (userEnterWord.ToLower() != this.targetWordToPlay.ToLower())
             {
                 alertTitle = "You are wrong!";
-                alertBodyText = sourceWordToPlay + " means " + targetWordToPlay + '.';
+                alertBodyText = this.sourceWordToPlay + " means " + this.targetWordToPlay + '.';
 
                 await this.DisplayAlert(alertTitle, alertBodyText, "Ok");
 

@@ -14,6 +14,9 @@ namespace Vocabulizer
         {
             InitializeComponent();
 
+            foreach (Word w in this.repo.GetAll())
+                this.words.Add(w.source + "/" + w.target);
+
             this.wordList.ItemsSource = this.words;
 
             practiceButon.Clicked += async (sender, args) =>

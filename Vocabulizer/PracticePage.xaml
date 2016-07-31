@@ -9,15 +9,13 @@
                 WinPhone="20, 20, 20, 20" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <!--<Label Text="Binding MainText" VerticalOptions="Center" HorizontalOptions="Center" />-->
     <StackLayout VerticalOptions="FillAndExpand"
                  HorizontalOptions="FillAndExpand"
                  Orientation="Vertical"
                  Spacing="15">
-      <Label x:Name="sourceWordText" Text="Hello" />
+      <Label x:Name="sourceWordText" />
       <Entry x:Name="targetWordText" Placeholder="Enter the target word" />
-      <Button x:Name="practiceButon" Text="Practice" Clicked="practice" />
-      <ListView x:Name="wordList" />
+      <Button x:Name="practiceButon" Text="Practice" Clicked="OnPractice" />
     </StackLayout>
   </ContentPage.Content>
 </ContentPage>
