@@ -6,7 +6,8 @@ namespace Vocabulizer
     {
         public App()
         {
-            MainPage = new Vocabulizer.MainPage();
+            //MainPage = new Vocabulizer.MainPage();
+            MainPage = new NavigationPage(new  Vocabulizer.MainPage());
         }
 
         protected override void OnStart()

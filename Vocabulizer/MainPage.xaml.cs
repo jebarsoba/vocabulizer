@@ -14,6 +14,11 @@ namespace Vocabulizer
             InitializeComponent();
 
             this.wordList.ItemsSource = this.words;
+
+            practiceButon.Clicked += async (sender, args) =>
+             {
+                 await Navigation.PushAsync(new PracticePage());
+             };
         }
 
         async void OnAddToMyList(object sender, EventArgs e)
@@ -34,8 +39,8 @@ namespace Vocabulizer
             sourceWordText.Text = string.Empty;
             targetWordText.Text = string.Empty;
         }
-        void GoPratcice(object sender, EventArgs e) {
-           // App.Navigation.PushAsync(new PracticePage());
-        }
+
+
+ 
     }
 }
