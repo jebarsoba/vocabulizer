@@ -15,6 +15,11 @@ namespace Vocabulizer
             InitializeComponent();
 
             this.wordList.ItemsSource = this.words;
+
+            practiceButon.Clicked += async (sender, args) =>
+             {
+                 await Navigation.PushAsync(new PracticePage());
+             };
         }
 
         async void OnAddToMyList(object sender, EventArgs e)
@@ -24,7 +29,7 @@ namespace Vocabulizer
                 string alertTitle = "An error has occurred";
                 string alertBodyText = "You have to enter both words.";
 
-                await this.DisplayAlert(alertTitle, alertBodyText, "Ok");
+                await this.DisplayAlert(alertTitle, alertBodyText, "OK");
 
                 return;
             }
