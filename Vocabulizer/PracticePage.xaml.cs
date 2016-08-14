@@ -15,7 +15,7 @@ namespace Vocabulizer
         {
             InitializeComponent();
 
-            Word word = this.repo.GetAll().FirstOrDefault();
+            Word word = new WordRandomizer(this.repo.GetAll().ToList<Word>()).GetRandomWord();
             this.sourceWordToPlay = word.source;
             this.targetWordToPlay = word.target;
 

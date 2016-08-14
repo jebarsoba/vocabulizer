@@ -18,6 +18,9 @@ namespace DAL
 
         public IList<Word> GetAll()
         {
+            //TODO: create table at app startup.
+            db.CreateTable<Word>();
+
             return db.Table<Word>().ToList();
         }
     }
