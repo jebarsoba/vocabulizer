@@ -7,14 +7,22 @@ namespace Vocabulizer.Test
     [TestFixture]
     public class WordRandomizerTest
     {
-        [Test]
-        public void GetWordTest()
+        List<Word> words;
+        WordRandomizer wordRandomizer;
+
+        [TestFixtureSetUp]
+        public void SetUp()
         {
-            List<Word> words = new List<Word>();
+            words = new List<Word>();
             words.Add(new Word() { source = "Hello", target = "Hola" });
             words.Add(new Word() { source = "Bye", target = "Chau" });
 
-            WordRandomizer wordRandomizer = new WordRandomizer(words);
+            wordRandomizer = new WordRandomizer(words);
+        }
+
+        [Test]
+        public void GetWordTest()
+        {
             Word firstWord = wordRandomizer.GetRandomWord();
             Word secondWord = wordRandomizer.GetRandomWord();
 
@@ -25,14 +33,9 @@ namespace Vocabulizer.Test
         [Test]
         public void UseEveryWordAndTryToUseOneOfThemAgainTest()
         {
-            List<Word> words = new List<Word>();
-            words.Add(new Word() { source = "Hello", target = "Hola" });
-            words.Add(new Word() { source = "Bye", target = "Chau" });
-
-            WordRandomizer wordRandomizer = new WordRandomizer(words);
             Word firstTry = wordRandomizer.GetRandomWord();
             Word secondTry = wordRandomizer.GetRandomWord();
-            Word thridTry = wordRandomizer.GetRandomWord();
+            Word thirdTry = wordRandomizer.GetRandomWord();
 
             Assert.AreNotEqual(firstTry.source, secondTry.source);
             Assert.AreNotEqual(firstTry.target, secondTry.target);
